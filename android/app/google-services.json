@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "648393889772",
+    "firebase_url": "https://pokt-4b819.firebaseio.com",
+    "project_id": "pokt-4b819",
+    "storage_bucket": "pokt-4b819.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648393889772:android:006bc33775fcf4925152c9",
+        "android_client_info": {
+          "package_name": "com.example.hackgt2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648393889772-2r2hg86c259klrmflhpk5h9aan0m4gq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXbgMaVaWTM__xH54SQuoz3B4qAXW6WQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648393889772-2r2hg86c259klrmflhpk5h9aan0m4gq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648393889772-8qh848tmg925cu0fa0hd914em4msi70d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.riatsa.pokt"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648393889772:android:43234bdd90c09f0b5152c9",
+        "android_client_info": {
+          "package_name": "com.riatsa.pokt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648393889772-raoo0ih7jqk37bf0q81tgru5o3t6gsms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riatsa.pokt",
+            "certificate_hash": "d995d70408616ad848a168ae7140338eeef12161"
+          }
+        },
+        {
+          "client_id": "648393889772-vsknj8s9c8ulmdeftui464ptnnsaq64g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riatsa.pokt",
+            "certificate_hash": "d46203654503170fb6e19b99b6db3ceb434c5ce7"
+          }
+        },
+        {
+          "client_id": "648393889772-2r2hg86c259klrmflhpk5h9aan0m4gq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXbgMaVaWTM__xH54SQuoz3B4qAXW6WQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648393889772-2r2hg86c259klrmflhpk5h9aan0m4gq3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648393889772-8qh848tmg925cu0fa0hd914em4msi70d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.riatsa.pokt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
