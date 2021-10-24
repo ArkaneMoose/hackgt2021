@@ -2,12 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:retail_io/components/coin_icon.dart';
 import 'package:retail_io/constants.dart';
+import 'package:retail_io/models/coins.dart';
+import 'package:retail_io/models/task.dart';
+import 'package:provider/provider.dart';
 
 enum _ScavengerHuntStep { step1, step2, complete }
 
 class CameraScanScreen extends StatefulWidget {
-  const CameraScanScreen({Key? key}) : super(key: key);
+  final Task task;
+
+  const CameraScanScreen({required this.task, Key? key}) : super(key: key);
 
   @override
   _CameraScanScreenState createState() => _CameraScanScreenState();
@@ -98,7 +104,8 @@ class _CameraScanScreenState extends State<CameraScanScreen>
     final inputImage =
         _getInputImageFromCameraImage(camera: camera, image: image);
     final barcodes = await _barcodeScanner.processImage(inputImage);
-    if (barcodes.isNotEmpty && mounted) {
+    if (barcodes.any((element) => element.value.rawValue == widget.task.upc) &&
+        mounted) {
       setState(() {
         _step = _ScavengerHuntStep.step2;
       });
@@ -134,33 +141,25 @@ class _CameraScanScreenState extends State<CameraScanScreen>
                   padding: const EdgeInsets.all(kDefaultPadding / 2),
                   children: [
                     RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(text: "Find "),
-                          TextSpan(
-                              text: "Bush's Baked Beans",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                        style: TextStyle(fontSize: 30, color: Colors.black),
+                      text: TextSpan(
+                        children: widget.task.taskText,
+                        style:
+                            const TextStyle(fontSize: 30, color: Colors.black),
                       ),
                     ),
                     const SizedBox(height: kDefaultPadding / 4),
                     RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
-                          TextSpan(
+                          const TextSpan(
                               text: "Reward:",
                               style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(text: " "),
-                          WidgetSpan(
-                            child: Icon(
-                              Icons.monetization_on,
-                              size: 20,
-                            ),
-                          ),
-                          TextSpan(text: " 100"),
+                          const TextSpan(text: " "),
+                          const WidgetSpan(child: CoinIcon(size: 20)),
+                          TextSpan(text: " ${widget.task.reward}"),
                         ],
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style:
+                            const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ),
                     const SizedBox(height: kDefaultPadding),
@@ -263,6 +262,9 @@ class _CameraScanScreenState extends State<CameraScanScreen>
                 onPressed: () {
                   setState(() {
                     _step = _ScavengerHuntStep.complete;
+                    Provider.of<CoinsModel>(context, listen: false)
+                        .addCoins(widget.task.reward);
+                    Navigator.pop(context);
                   });
                 },
                 child: const Icon(Icons.camera_alt),
