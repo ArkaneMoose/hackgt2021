@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:retail_io/screens/home/home_screen.dart';
+import 'package:retail_io/screens/home/bestbuy.dart';
+import 'package:retail_io/screens/home/publix.dart';
+import 'package:retail_io/screens/home/target.dart';
 import 'package:retail_io/screens/login/login_screen.dart';
 
 void main() {
@@ -24,10 +26,10 @@ class App extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomeScreen(),
+      home: const BestBuy(),
     );
   }
 }
