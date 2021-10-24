@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class Reward {
+  final String type;
   final List<InlineSpan> taskText;
   final int cost;
   final String imagePath;
@@ -10,6 +11,7 @@ class Reward {
   final String upc;
 
   const Reward({
+    required this.type,
     required this.taskText,
     required this.cost,
     required this.imagePath,

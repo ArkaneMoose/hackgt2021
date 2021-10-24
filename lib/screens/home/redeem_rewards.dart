@@ -3,81 +3,63 @@ import 'package:flutter/material.dart' hide AppBar;
 import 'package:retail_io/components/app_bar.dart';
 import 'package:retail_io/auth.dart';
 import 'package:retail_io/constants.dart';
+import 'package:retail_io/screens/home/components/reward_item.dart';
 import 'package:retail_io/screens/home/components/task_item.dart';
-import 'package:retail_io/models/task.dart';
+import 'package:retail_io/models/reward.dart';
+
+const publixGradient = LinearGradient(
+  colors: [
+    Colors.green,
+    Colors.lightGreen,
+  ],
+);
+final targetGradient = LinearGradient(colors: [
+  Colors.redAccent.shade400,
+  Colors.redAccent.shade700,
+]);
+final bestBuyGradient = LinearGradient(
+  colors: [
+    Colors.yellowAccent.shade400,
+    Colors.yellowAccent.shade700,
+  ],
+);
 
 class Rewards extends StatelessWidget {
-  static final tasks = <Task>[
-    Task(
-      gradient: LinearGradient(
-        colors: [
-          Colors.redAccent.shade400,
-          Colors.redAccent.shade700,
-        ],
-      ),
-      type: "",
+  static final tasks = <Reward>[
+    Reward(
+      type: "Coupon",
+      gradient: publixGradient,
       taskText: const [
-        TextSpan(text: ""),
         TextSpan(
-            text: "5 dollars off your purchase of 40 dollars or more.",
+            text: "\$5 off your purchase of \$40 or more",
             style: TextStyle(fontWeight: FontWeight.bold)),
       ],
-      reward: 100,
-      imagePath: "assets/products/pods.png",
+      cost: 100,
+      imagePath: "assets/products/publix.png",
       upc: "",
     ),
-    Task(
-      gradient: LinearGradient(
-        colors: [
-          Colors.redAccent.shade400,
-          Colors.redAccent.shade700,
-        ],
-      ),
-      type: "Scavenger Hunt",
+    Reward(
+      type: "Gift Card",
+      gradient: targetGradient,
       taskText: const [
-        TextSpan(text: "Find "),
         TextSpan(
-            text: "up & up Premium Ultra Strong Toilet Paper",
+            text: "\$5 gift card",
             style: TextStyle(fontWeight: FontWeight.bold)),
       ],
-      reward: 80,
-      imagePath: "assets/products/toilet_paper.png",
+      cost: 500,
+      imagePath: "assets/products/target.png",
       upc: "",
     ),
-    Task(
-      gradient: LinearGradient(
-        colors: [
-          Colors.redAccent.shade400,
-          Colors.redAccent.shade700,
-        ],
-      ),
-      type: "Scavenger Hunt",
+    Reward(
+      type: "Coupon",
+      gradient: bestBuyGradient,
       taskText: const [
-        TextSpan(text: "Find "),
         TextSpan(
-            text: "up & up Replacement Water Filters",
+            text: "\$10 off any smart watch",
             style: TextStyle(fontWeight: FontWeight.bold)),
       ],
-      reward: 150,
-      imagePath: "assets/products/water_filter.png",
-      upc: "",
-    ),
-    Task(
-      gradient: LinearGradient(
-        colors: [
-          Colors.redAccent.shade400,
-          Colors.redAccent.shade700,
-        ],
-      ),
-      type: "Scavenger Hunt",
-      taskText: const [
-        TextSpan(text: "Find "),
-        TextSpan(
-            text: "up & up 2 Pocket Plastic Folder with Prongs",
-            style: TextStyle(fontWeight: FontWeight.bold)),
-      ],
-      reward: 100,
-      imagePath: "assets/products/folder.png",
+      cost: 1000,
+      imagePath: "assets/products/bestbuy.png",
       upc: "",
     ),
   ];
@@ -89,13 +71,22 @@ class Rewards extends StatelessWidget {
     return AuthGate(
       child: Scaffold(
         backgroundColor: Colors.redAccent.shade200,
-        appBar: AppBar(),
+        appBar: AppBar(context: context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(kDefaultPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: tasks.map((task) => TaskItem(task: task)).toList(),
+              children: tasks
+                  .map((task) => RewardItem(
+                      reward: task,
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.redAccent.shade400,
+                          Colors.redAccent.shade700,
+                        ],
+                      )))
+                  .toList(),
             ),
           ),
         ),

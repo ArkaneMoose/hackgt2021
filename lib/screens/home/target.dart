@@ -85,7 +85,7 @@ class Target extends StatelessWidget {
     return AuthGate(
       child: Scaffold(
         backgroundColor: Colors.redAccent.shade200,
-        appBar: AppBar(),
+        appBar: AppBar(context: context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(kDefaultPadding),

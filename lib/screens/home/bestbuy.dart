@@ -106,7 +106,7 @@ class BestBuy extends StatelessWidget {
     return AuthGate(
       child: Scaffold(
         backgroundColor: Colors.yellowAccent.shade100,
-        appBar: AppBar(),
+        appBar: AppBar(context: context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(kDefaultPadding),

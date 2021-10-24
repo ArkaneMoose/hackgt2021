@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:retail_io/constants.dart';
+import 'package:retail_io/screens/home/stores.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -134,7 +136,8 @@ class _LoginScreenState extends State<LoginScreen> {
       child: RaisedButton(
         elevation: 5.0,
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => Stores()));
         },
         padding: const EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(

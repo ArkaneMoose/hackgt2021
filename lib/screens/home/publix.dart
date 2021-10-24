@@ -85,7 +85,7 @@ class Publix extends StatelessWidget {
     return AuthGate(
       child: Scaffold(
         backgroundColor: Colors.lightGreen.shade100,
-        appBar: AppBar(),
+        appBar: AppBar(context: context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(kDefaultPadding),
