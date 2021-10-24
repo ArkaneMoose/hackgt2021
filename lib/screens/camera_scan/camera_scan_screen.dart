@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 enum _ScavengerHuntStep { step1, step2, complete }
 
 class CameraScanScreen extends StatefulWidget {
-  final Task task;
+  final ScanTask task;
 
   const CameraScanScreen({required this.task, Key? key}) : super(key: key);
 

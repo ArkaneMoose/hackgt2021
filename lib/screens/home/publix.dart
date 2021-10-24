@@ -8,14 +8,13 @@ import 'package:retail_io/models/task.dart';
 
 class Publix extends StatelessWidget {
   static const tasks = <Task>[
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.green,
           Colors.lightGreen,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: [
         TextSpan(text: "Find "),
         TextSpan(
@@ -26,14 +25,13 @@ class Publix extends StatelessWidget {
       imagePath: "assets/products/chips.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.green,
           Colors.lightGreen,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: [
         TextSpan(text: "Find "),
         TextSpan(
@@ -44,14 +42,13 @@ class Publix extends StatelessWidget {
       imagePath: "assets/products/club_soda.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.green,
           Colors.lightGreen,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: [
         TextSpan(text: "Find "),
         TextSpan(
@@ -62,14 +59,13 @@ class Publix extends StatelessWidget {
       imagePath: "assets/products/cookies.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.green,
           Colors.lightGreen,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: [
         TextSpan(text: "Find "),
         TextSpan(

@@ -8,14 +8,13 @@ import 'package:retail_io/models/task.dart';
 
 class Target extends StatelessWidget {
   static final tasks = <Task>[
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.redAccent.shade400,
           Colors.redAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -26,14 +25,13 @@ class Target extends StatelessWidget {
       imagePath: "assets/products/pods.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.redAccent.shade400,
           Colors.redAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -44,14 +42,13 @@ class Target extends StatelessWidget {
       imagePath: "assets/products/toilet_paper.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.redAccent.shade400,
           Colors.redAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -62,14 +59,13 @@ class Target extends StatelessWidget {
       imagePath: "assets/products/water_filter.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.redAccent.shade400,
           Colors.redAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(

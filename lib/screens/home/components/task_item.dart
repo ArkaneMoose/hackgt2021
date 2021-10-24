@@ -4,6 +4,7 @@ import 'package:retail_io/components/coin_icon.dart';
 import 'package:retail_io/constants.dart';
 import 'package:retail_io/models/task.dart';
 import 'package:retail_io/screens/camera_scan/camera_scan_screen.dart';
+import 'package:retail_io/screens/qna/qna_screen.dart';
 
 class TaskItem extends StatelessWidget {
   final Task task;
@@ -17,11 +18,19 @@ class TaskItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
-          Navigator.push(context, CupertinoPageRoute(builder: (context) {
-            return CameraScanScreen(task: task);
-          }));
+          final task = this.task;
+          if (task is ScanTask) {
+            Navigator.push(context, CupertinoPageRoute(builder: (context) {
+              return CameraScanScreen(task: task);
+            }));
+          }
+          if (task is QnATask) {
+            Navigator.push(context, CupertinoPageRoute(builder: (context) {
+              return QnAScreen(task: task);
+            }));
+          }
         },
         child: DecoratedBox(
           decoration: BoxDecoration(

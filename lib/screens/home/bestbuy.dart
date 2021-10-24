@@ -8,14 +8,13 @@ import 'package:retail_io/models/task.dart';
 
 class BestBuy extends StatelessWidget {
   static final tasks = <Task>[
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.yellowAccent.shade400,
           Colors.yellowAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -26,14 +25,13 @@ class BestBuy extends StatelessWidget {
       imagePath: "assets/products/surge_protector.png",
       upc: "844660091998",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.yellowAccent.shade400,
           Colors.yellowAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -44,14 +42,13 @@ class BestBuy extends StatelessWidget {
       imagePath: "assets/products/camera.png",
       upc: "",
     ),
-    Task(
+    QnATask(
       gradient: LinearGradient(
         colors: [
           Colors.yellowAccent.shade400,
           Colors.yellowAccent.shade700,
         ],
       ),
-      type: "Question Challenge",
       taskText: const [
         TextSpan(text: "Answer: "),
         TextSpan(
@@ -60,16 +57,18 @@ class BestBuy extends StatelessWidget {
       ],
       reward: 150,
       imagePath: "assets/products/tv.png",
-      upc: "",
+      question:
+          "This TCL 55\" 4K Smart Roku TV is normally \$499.99 but is 20% off at Best Buy. How much will you save if you buy it right now?",
+      answers: const ["\$50", "\$80", "\$100"],
+      correctAnswers: const {2},
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.yellowAccent.shade400,
           Colors.yellowAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
@@ -80,14 +79,13 @@ class BestBuy extends StatelessWidget {
       imagePath: "assets/products/vacuum.png",
       upc: "",
     ),
-    Task(
+    ScanTask(
       gradient: LinearGradient(
         colors: [
           Colors.yellowAccent.shade400,
           Colors.yellowAccent.shade700,
         ],
       ),
-      type: "Scavenger Hunt",
       taskText: const [
         TextSpan(text: "Find "),
         TextSpan(
