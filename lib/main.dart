@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retail_io/screens/home/bestbuy.dart';
 import 'package:retail_io/screens/home/publix.dart';
+import 'package:retail_io/screens/home/stores.dart';
 import 'package:retail_io/screens/home/target.dart';
 import 'package:retail_io/screens/login/login_screen.dart';
 
@@ -29,7 +30,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const BestBuy(),
+      home: const Stores(),
     );
   }
 }

@@ -74,6 +74,8 @@ flutter:
     - assets/products/vacuum.png
     - assets/products/speaker.png
     - assets/products/publix.png
+    - assets/products/target.png
+    - assets/products/bestbuy.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

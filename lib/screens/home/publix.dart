@@ -65,11 +65,11 @@ class Publix extends StatelessWidget {
                   taskText: [
                     TextSpan(text: "Find "),
                     TextSpan(
-                        text: "Publix Frosted Sugar Cookies 10-Count",
+                        text: "up & up Premium Ultra Strong Toilet Paper",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                   reward: 150,
-                  imagePath: "assets/products/cookies.png",
+                  imagePath: "assets/products/toilet_paper.png",
                 ),
                 TaskItem(
                   gradient: LinearGradient(
